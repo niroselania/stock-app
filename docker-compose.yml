@@ -1,0 +1,7 @@
+services:
+  stock-app:
+    build: .
+    container_name: stock-app
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
