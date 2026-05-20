@@ -72,7 +72,7 @@ class StockHandler(BaseHTTPRequestHandler):
             )
 
             stock_item = form["stock"] if "stock" in form else None
-            if not stock_item or not getattr(stock_item, "filename", ""):
+            if stock_item is None or not getattr(stock_item, "filename", ""):
                 self.send_error(400, "Falta subir STOCK.xlsx")
                 return
 
